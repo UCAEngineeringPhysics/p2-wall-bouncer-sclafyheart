@@ -5,6 +5,8 @@ from machine import Pin, PWM, Timer
 import micropython
 import random
 
+# Made with assistance from Gemini for obstacle avoidance logic and HRI.
+
 class DualMotorDriver:
     
     def __init__(self, right_ids: tuple, left_ids: tuple, stby_id: int) -> None:
