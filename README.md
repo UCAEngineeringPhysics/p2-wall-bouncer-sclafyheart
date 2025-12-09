@@ -96,7 +96,7 @@ Major required components are listed below:
 - Mark out employed signal pins' names.
 - Electronic components' values have to match your actual circuit.
 
-  ![Wiring Diagram](PROJECT 2 WIRE DIAGRAM.png) 
+  <img width="914" height="615" alt="image" src="https://github.com/user-attachments/assets/67194db5-4e28-45be-8022-cefda81ce024" />
 
 #### 3.3 (6%) Software Design
 Use a [flowchart](https://en.wikipedia.org/wiki/Flowchart) or a [algorithm/pseudocode table](https://www.overleaf.com/learn/latex/Algorithms) or a [itemized list](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#lists) to explain your wall avoidance strategy.
