@@ -100,12 +100,19 @@ Use a [flowchart](https://en.wikipedia.org/wiki/Flowchart) or a [algorithm/pseud
 Sensing the Environment:The robot reads the distance ($D$) from the ultrasonic sensor.Decision: Is the distance $D$ less than the defined AVOIDANCE_DISTANCE_M (0.20 meters)?
 
 Action Sequence (If Obstacle Detected: $D < 0.20$ m):
+
 2.1. Immediate Stop: Halt all motor movement (dmd.stop()). This prevents contact or minimizes impact.
+
 2.2. Back Up: Drive straight backward for a duration defined by BACKUP_TIME_S (0.5 seconds). This creates necessary clearance from the obstacle.
+
 2.3. Stop Again: Halt all motor movement (dmd.stop()) to prepare for the turn.
+
 2.4. Choose New Heading: Randomly select a turning direction (spin left or spin right). This randomization helps the robot escape corner traps.
+
 2.5. Execute Turn: Run the chosen spin maneuver for a duration defined by TURN_TIME_S (0.4 seconds). This rotation changes the robot's heading away from the obstacle.
+
 2.6. Final Stop: Halt all motor movement (dmd.stop()) after the turn is complete.
+
 2.7. Resume Operation: The robot exits the avoidance block and returns to the main loop, where it immediately starts driving forward in the newly chosen direction.
 
 Action Sequence (If Path is Clear: $D \ge 0.20$ m):The robot continues driving straight forward (dmd.linear_forward(current_speed)) at the calculated current_speed (which accounts for the low-battery reduction if applicable).
