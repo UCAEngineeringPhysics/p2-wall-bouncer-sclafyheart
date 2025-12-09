@@ -97,7 +97,9 @@ Major required components are listed below:
 #### 3.3 (6%) Software Design
 Use a [flowchart](https://en.wikipedia.org/wiki/Flowchart) or a [algorithm/pseudocode table](https://www.overleaf.com/learn/latex/Algorithms) or a [itemized list](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#lists) to explain your wall avoidance strategy.
 
-Sensing the Environment:The robot reads the distance ($D$) from the ultrasonic sensor.Decision: Is the distance $D$ less than the defined AVOIDANCE_DISTANCE_M (0.20 meters)?
+Sensing the Environment:The robot reads the distance ($D$) from the ultrasonic sensor.
+
+Decision: Is the distance $D$ less than the defined AVOIDANCE_DISTANCE_M (0.20 meters)?
 
 Action Sequence (If Obstacle Detected: $D < 0.20$ m):
 
@@ -120,4 +122,8 @@ Action Sequence (If Path is Clear: $D \ge 0.20$ m):The robot continues driving s
 #### 3.4 (4%) Energy Efficient Path Planning 
 > The goal is using this robot to cover a rectangle-shape area.
 > Do your research, make reasonable assumptions and propose a path pattern for the robot to follow.
-> Please state why this pattern is energy efficient.  
+> Please state why this pattern is energy efficient.
+
+> The robot's current "Drive-until-Hit-then-Random-Turn" pattern is energy efficient for reaction and survival because it minimizes energy spent on decision-making and steering.
+>
+> To efficiently cover a rectangular area, the robot must follow a planned path called the Boustrophedon (or "Lawnmower") pattern. This pattern is designed for maximum coverage with minimal travel distance. It basically drives in a straight line, moves an equal distance to the robot's length, drives in a straight line, etc.
