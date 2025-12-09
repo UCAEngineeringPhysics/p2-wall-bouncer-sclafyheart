@@ -85,6 +85,8 @@ Major required components are listed below:
 - Denote locations of the mounting holes.
 - Denote dimensions of the mounting holes.
 
+  ![Bed Design](bedfordesign-Page.pdf)
+
 > [!TIP]
 > - You may want to checkout TechDraw of FreeCAD. Other CAD software should have the similar tools.  
 > - Hand drawings are acceptable.
@@ -93,6 +95,8 @@ Major required components are listed below:
 - Specify power wires using red and black wires.
 - Mark out employed signal pins' names.
 - Electronic components' values have to match your actual circuit.
+
+  ![Wiring Diagram](PROJECT 2 WIRE DIAGRAM.png)
 
 #### 3.3 (6%) Software Design
 Use a [flowchart](https://en.wikipedia.org/wiki/Flowchart) or a [algorithm/pseudocode table](https://www.overleaf.com/learn/latex/Algorithms) or a [itemized list](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#lists) to explain your wall avoidance strategy.
