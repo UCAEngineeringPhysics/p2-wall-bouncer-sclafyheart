@@ -121,7 +121,7 @@ Action Sequence (If Obstacle Detected: $D < 0.20$ m):
 
 2.7. Resume Operation: The robot exits the avoidance block and returns to the main loop, where it immediately starts driving forward in the newly chosen direction.
 
-Action Sequence (If Path is Clear: $D \ge 0.20$ m):The robot continues driving straight forward (dmd.linear_forward(current_speed)) at the calculated current_speed (which accounts for the low-battery reduction if applicable).
+Action Sequence (If Path is Clear: $D \ge 0.20$ m):The robot continues driving straight forward (dmd.linear_forward(current_speed)) at the calculated current_speed.
 
 #### 3.4 (4%) Energy Efficient Path Planning 
 > The goal is using this robot to cover a rectangle-shape area.
