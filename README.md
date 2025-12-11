@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/LMWu6GmP)
 # Project 2: Wall Bouncer
 
 ## Background
@@ -84,6 +85,8 @@ Major required components are listed below:
 - Denote locations of the mounting holes.
 - Denote dimensions of the mounting holes.
 
+  ![Bed Design](bedfordesign-Page.pdf)
+
 > [!TIP]
 > - You may want to checkout TechDraw of FreeCAD. Other CAD software should have the similar tools.  
 > - Hand drawings are acceptable.
@@ -93,10 +96,38 @@ Major required components are listed below:
 - Mark out employed signal pins' names.
 - Electronic components' values have to match your actual circuit.
 
+ <img width="914" height="615" alt="image" src="https://github.com/user-attachments/assets/53eb9aeb-c476-4480-a9a3-349375e32742" />
+
 #### 3.3 (6%) Software Design
 Use a [flowchart](https://en.wikipedia.org/wiki/Flowchart) or a [algorithm/pseudocode table](https://www.overleaf.com/learn/latex/Algorithms) or a [itemized list](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#lists) to explain your wall avoidance strategy.
+
+Sensing the Environment:The robot reads the distance ($D$) from the ultrasonic sensor.
+
+Decision: Is the distance $D$ less than the defined AVOIDANCE_DISTANCE_M (0.20 meters)?
+
+Action Sequence (If Obstacle Detected: $D < 0.20$ m):
+
+2.1. Immediate Stop: Halt all motor movement (dmd.stop()). This prevents contact or minimizes impact.
+
+2.2. Back Up: Drive straight backward for a duration defined by BACKUP_TIME_S (0.5 seconds). This creates necessary clearance from the obstacle.
+
+2.3. Stop Again: Halt all motor movement (dmd.stop()) to prepare for the turn.
+
+2.4. Choose New Heading: Randomly select a turning direction (spin left or spin right). This randomization helps the robot escape corner traps.
+
+2.5. Execute Turn: Run the chosen spin maneuver for a duration defined by TURN_TIME_S (0.4 seconds). This rotation changes the robot's heading away from the obstacle.
+
+2.6. Final Stop: Halt all motor movement (dmd.stop()) after the turn is complete.
+
+2.7. Resume Operation: The robot exits the avoidance block and returns to the main loop, where it immediately starts driving forward in the newly chosen direction.
+
+Action Sequence (If Path is Clear: $D \ge 0.20$ m):The robot continues driving straight forward (dmd.linear_forward(current_speed)) at the calculated current_speed.
 
 #### 3.4 (4%) Energy Efficient Path Planning 
 > The goal is using this robot to cover a rectangle-shape area.
 > Do your research, make reasonable assumptions and propose a path pattern for the robot to follow.
-> Please state why this pattern is energy efficient.  
+> Please state why this pattern is energy efficient.
+
+> The robot's current "Drive-until-Hit-then-Random-Turn" pattern is energy efficient for reaction and survival because it minimizes energy spent on decision-making and steering.
+>
+> To efficiently cover a rectangular area, the robot must follow a planned path called the Boustrophedon (or "Lawnmower") pattern. This pattern is designed for maximum coverage with minimal travel distance. It basically drives in a straight line, moves an equal distance to the robot's length, drives in a straight line, etc.
